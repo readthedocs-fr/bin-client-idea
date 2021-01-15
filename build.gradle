@@ -21,10 +21,10 @@ intellij {
 }
 patchPluginXml {
     changeNotes """
-      First release </br>
-      Includes : </br>
-      - Send code to <em>https://bin.readthedocs.fr</em> </br>
-      - Copy link to clipboard if asked for </br>
+      <p>First release</p>
+      <p>Includes :
+      <li> Send code to <em>https://bin.readthedocs.fr</em> </li>
+      <li> Copy link to clipboard if asked for </li> </p>
       """
 }
 test {

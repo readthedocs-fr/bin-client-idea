@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>tech.hokkaydo.bindea</id>
     <name>Bindea</name>
-    <vendor email="contact@readthedocs.fr" url="https://readhedocs.fr">Hokkaydo</vendor>
+    <vendor email="contact@readthedocs.fr" url="https://readthedocs.fr">Hokkaydo</vendor>
 
     <description><![CDATA[
     This extension allow you to upload some piece of code (or a complete file)
