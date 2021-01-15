@@ -30,3 +30,7 @@ patchPluginXml {
 test {
     useJUnitPlatform()
 }
+
+publishPlugin {
+    token = project.property("publish.token")
+}
