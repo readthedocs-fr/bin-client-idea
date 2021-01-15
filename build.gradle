@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.6.5'
+}
+
+group 'tech.hokkaydo'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '2020.3'
+}
+patchPluginXml {
+    changeNotes """
+      First release </br>
+      Includes : </br>
+      - Send code to <em>https://bin.readthedocs.fr</em> </br>
+      - Copy link to clipboard if asked for </br>
+      """
+}
+test {
+    useJUnitPlatform()
+}
