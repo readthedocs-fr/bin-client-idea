@@ -17,15 +17,6 @@ jobs:
         with:
           java-version: 11
 
-      - name: Restore gradle.properties
-        env:
-          GRADLE_PROPERTIES: ${{ secrets.GRADLE_PROPERTIES }}
-        shell: bash
-        run: |
-          echo ${ secrets.GRADLE_PROPERTIES }
-          echo ${GRADLE_PROPERTIES} >> gradle.properties
-          cat ~/.gradle/gradle.properties
-
       - name: Release
         uses: actions/create-release@v1
         id: release
