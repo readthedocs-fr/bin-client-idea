@@ -43,7 +43,7 @@ publishPlugin {
         tempToken = project.property("publish.token")
     }catch (MissingPropertyException ignored){}
     if(tempToken == "") {
-        tempToken = System.getenv("publish.token")
+        tempToken = System.getenv("PUBLISH_TOKEN")
     }
     token = tempToken
 }
