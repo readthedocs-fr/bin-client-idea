@@ -36,7 +36,7 @@ patchPluginXml {
 test {
     useJUnitPlatform()
 }
-var tempToken = ""
+tempToken = ""
 try {
     tempToken = project.property("publish.token")
 }catch (MissingPropertyException ignored){}
