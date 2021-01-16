@@ -3,8 +3,12 @@ plugins {
     id 'org.jetbrains.intellij' version '0.6.5'
 }
 
-group 'tech.hokkaydo'
-version '1.0-SNAPSHOT'
+group 'fr.readthedocs'
+version '0.1.0-alpha'
+
+jar {
+    archivesBaseName = "Bindea"
+}
 
 repositories {
     mavenCentral()
@@ -24,7 +28,9 @@ patchPluginXml {
       <p>First release</p>
       <p>Includes :
       <li> Send code to <em>https://bin.readthedocs.fr</em> </li>
-      <li> Copy link to clipboard if asked for </li> </p>
+      <li> Copy link to clipboard if asked for </li> 
+      <li> See already bin sent pieces of code</li>
+      </p>
       """
 }
 test {

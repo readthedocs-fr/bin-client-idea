@@ -1,4 +1,4 @@
-package tech.hokkaydo.bindea;
+package fr.readthedocs.bindea;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -16,12 +16,10 @@ import com.intellij.util.ui.TextTransferable;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Objects;
-import java.util.Scanner;
 
 public class UploadAction extends AnAction {
 

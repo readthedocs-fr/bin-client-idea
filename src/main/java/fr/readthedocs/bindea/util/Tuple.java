@@ -1,4 +1,4 @@
-package tech.hokkaydo.bindea.util;
+package fr.readthedocs.bindea.util;
 
 /**
  * Created by Hokkaydo on 11-01-2021.

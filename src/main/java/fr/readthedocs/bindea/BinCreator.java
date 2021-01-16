@@ -1,6 +1,6 @@
-package tech.hokkaydo.bindea;
+package fr.readthedocs.bindea;
 
-import tech.hokkaydo.bindea.util.Tuple;
+import fr.readthedocs.bindea.util.Tuple;
 
 import java.io.IOException;
 import java.net.Authenticator;

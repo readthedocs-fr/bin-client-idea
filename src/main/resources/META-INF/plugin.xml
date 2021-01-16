@@ -1,7 +1,7 @@
 <idea-plugin>
-    <id>tech.hokkaydo.bindea</id>
+    <id>fr.readthedocs.bindea</id>
     <name>Bindea</name>
-    <vendor email="contact@readthedocs.fr" url="https://readthedocs.fr">Hokkaydo</vendor>
+    <vendor email="opensource@readthedocs.fr" url="https://readthedocs.fr">readthedocs-fr</vendor>
 
     <description><![CDATA[
     This extension allow you to upload some piece of code (or a complete file)
@@ -18,10 +18,10 @@
     <actions>
         <group id="Bindea.UploadAction" text="Bindea">
             <add-to-group group-id="MainMenu" anchor="last"/>
-            <action id="tech.hokkaydo.bindea.UploadAction" class="tech.hokkaydo.bindea.UploadAction" text="Upload Code" description="Upload a piece of code on the rtd-bin">
+            <action id="fr.readthedocs.bindea.UploadAction" class="fr.readthedocs.bindea.UploadAction" text="Upload Code" description="Upload a piece of code on the rtd-bin">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt R"/>
             </action>
-            <action id="tech.hokkaydo.bindea.OpenStorageAction" class="tech.hokkaydo.bindea.OpenStorageAction" text="StorageAction"
+            <action id="fr.readthedocs.bindea.OpenStorageAction" class="fr.readthedocs.bindea.OpenStorageAction" text="Open Storage"
                     description="Open the storage window ">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt S"/>
             </action>

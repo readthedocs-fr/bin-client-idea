@@ -1,4 +1,4 @@
-package tech.hokkaydo.bindea;
+package fr.readthedocs.bindea;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
