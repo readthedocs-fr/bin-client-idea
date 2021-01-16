@@ -36,14 +36,13 @@ patchPluginXml {
 test {
     useJUnitPlatform()
 }
-
+var tempToken = ""
+try {
+    tempToken = project.property("publish.token")
+}catch (MissingPropertyException ignored){}
+if(tempToken == "") {
+    tempToken = System.getenv("publish.token")
+}
 publishPlugin {
-    var tempToken = ""
-    try {
-        tempToken = project.property("publish.token")
-    }catch (MissingPropertyException ignored){}
-    if(tempToken == "") {
-        tempToken = System.getenv("publish.token")
-    }
     token = tempToken
 }
