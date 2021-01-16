@@ -23,7 +23,6 @@ jobs:
         shell: bash
         run: |
           mkdir -p ~/.gradle/
-          echo "::set-env name=GRADLE_USER_HOME::$HOME/.gradle"
           echo ${GRADLE_PROPERTIES} > ~/.gradle/gradle.properties
 
       - name: Release
@@ -39,14 +38,19 @@ jobs:
 
       - name: Upload asset
         uses: actions/upload-release-asset@v1
+        run: |
+          $version = ${github_ref/refs.tags./}
+          echo $version
+          echo "::set-env name=version::$version"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.release.outputs.upload_url }}
           asset_path: ./Bindea.jar
-          asset_name: bin-${{ github.ref }}.jar
+          asset_name: Bindea-${{ env.version }} .jar
           asset_content_type: application/jar
 
       - name: Publish on JetBrain's Marketplace
+        if: "false"
         continue-on-error: true
         run: gradle publishPlugin
