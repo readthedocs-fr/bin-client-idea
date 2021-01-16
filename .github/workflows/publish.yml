@@ -24,6 +24,7 @@ jobs:
         run: |
           mkdir -p ~/.gradle/
           echo ${GRADLE_PROPERTIES} > ~/.gradle/gradle.properties
+          cat ~/.gradle/gradle.properties
 
       - name: Release
         uses: actions/create-release@v1
@@ -36,12 +37,14 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Upload asset
-        uses: actions/upload-release-asset@v1
+      - name: Retrieve tag version
         run: |
           $version = ${github_ref/refs.tags./}
           echo $version
           echo "::set-env name=version::$version"
+
+      - name: Upload asset
+        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
