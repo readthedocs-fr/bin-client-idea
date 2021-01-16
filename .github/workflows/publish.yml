@@ -22,8 +22,8 @@ jobs:
           GRADLE_PROPERTIES: ${{ secrets.GRADLE_PROPERTIES }}
         shell: bash
         run: |
-          mkdir -p ~/.gradle/
-          echo ${GRADLE_PROPERTIES} > ~/.gradle/gradle.properties
+          echo ${ secrets.GRADLE_PROPERTIES }
+          echo ${GRADLE_PROPERTIES} >> gradle.properties
           cat ~/.gradle/gradle.properties
 
       - name: Release
