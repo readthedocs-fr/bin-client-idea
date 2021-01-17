@@ -1,6 +1,6 @@
-package fr.readthedocs.bindea;
+package fr.readthedocs.rtb;
 
-import fr.readthedocs.bindea.util.Tuple;
+import fr.readthedocs.rtb.util.Tuple;
 
 import java.io.IOException;
 import java.net.Authenticator;

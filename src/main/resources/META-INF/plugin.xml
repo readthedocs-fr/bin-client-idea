@@ -1,6 +1,6 @@
 <idea-plugin>
-    <id>fr.readthedocs.bindea</id>
-    <name>Bindea</name>
+    <id>fr.readthedocs.rtb</id>
+    <name>Read The Bin</name>
     <vendor email="opensource@readthedocs.fr" url="https://readthedocs.fr">readthedocs-fr</vendor>
 
     <description><![CDATA[
@@ -16,12 +16,12 @@
     </extensions>
 
     <actions>
-        <group id="Bindea.UploadAction" text="Bindea">
+        <group id="rtb.UploadAction" text="Read The Bin">
             <add-to-group group-id="MainMenu" anchor="last"/>
-            <action id="fr.readthedocs.bindea.UploadAction" class="fr.readthedocs.bindea.UploadAction" text="Upload Code" description="Upload a piece of code on the rtd-bin">
+            <action id="fr.readthedocs.rtb.UploadAction" class="fr.readthedocs.rtb.UploadAction" text="Upload Code" description="Upload a piece of code on the rtd-bin">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt R"/>
             </action>
-            <action id="fr.readthedocs.bindea.OpenStorageAction" class="fr.readthedocs.bindea.OpenStorageAction" text="Open Storage"
+            <action id="fr.readthedocs.rtb.OpenStorageAction" class="fr.readthedocs.rtb.OpenStorageAction" text="Open Storage"
                     description="Open the storage window ">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt S"/>
             </action>

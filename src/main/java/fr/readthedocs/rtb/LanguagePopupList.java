@@ -1,4 +1,4 @@
-package fr.readthedocs.bindea;
+package fr.readthedocs.rtb;
 
 import com.intellij.openapi.ui.popup.PopupStep;
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
