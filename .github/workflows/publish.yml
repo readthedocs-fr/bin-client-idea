@@ -43,6 +43,5 @@ jobs:
           asset_content_type: application/jar
 
       - name: Publish on JetBrain's Marketplace
-        if: "false"
         continue-on-error: true
         run: gradle publishPlugin
