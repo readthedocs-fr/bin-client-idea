@@ -4,9 +4,15 @@
     <vendor email="opensource@readthedocs.fr" url="https://readthedocs.fr">readthedocs-fr</vendor>
 
     <description><![CDATA[
-    This extension allow you to upload some piece of code (or a complete file)
-    on rtd-bin.
-    ]]></description>
+        <p>Allows you to download a piece of code (or an entire file)
+            on rtd-bin.</p>
+
+        <p>By clicking on the "Read The Bin" button in the top bar, you can upload the selected part or code or the file opened at <a href="https://bin.readthedocs.fr">rtd- bin</a>.
+            Next, you will need to select the language of your code for the syntax highlighting.</p>
+
+        <p>You can also check your already created bins by selecting the <code>Open storage</code> button.
+        ]]>
+    </description>
 
     <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
