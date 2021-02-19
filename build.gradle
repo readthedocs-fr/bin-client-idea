@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'fr.readthedocs'
-version '0.1.1-alpha'
+version '0.1.3-alpha'
 
 jar {
     archivesBaseName = "Bindea"
@@ -25,12 +25,11 @@ intellij {
 }
 patchPluginXml {
     changeNotes """
-      <p>First release</p>
-      <p>Includes :
-      <li> Send code to <em>https://bin.readthedocs.fr</em> </li>
-      <li> Copy link to clipboard if asked for </li> 
-      <li> See already bin sent pieces of code</li>
+      <p>Fast Fix</p>
+      <p>Changes :
+      <li>Changing uploading system. Was not correctly working due to some unsupported code.</li>
       </p>
+      <p>Please mail us if you notice new bugs</p>
       """
 }
 test {

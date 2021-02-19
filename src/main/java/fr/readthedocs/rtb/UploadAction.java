@@ -54,7 +54,7 @@ public class UploadAction extends AnAction {
     private void createAndSendBin(String code, String lang, Project project) {
         try {
             BinCreator.createBin(code, lang, tuple -> {
-                if(tuple.getT() > 299) {
+                if(tuple.getT() >= 400 ) {
                     Messages.showErrorDialog(project, "Please report this to developers with the following code status : " + tuple.getT(), "An Error Occurred");
                     return;
                 }

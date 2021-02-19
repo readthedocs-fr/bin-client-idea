@@ -1,42 +1,38 @@
 package fr.readthedocs.rtb;
 
 import fr.readthedocs.rtb.util.Tuple;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+import org.apache.http.message.BasicNameValuePair;
 
 import java.io.IOException;
-import java.net.Authenticator;
-import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URLEncoder;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.nio.charset.StandardCharsets;
-import java.time.Duration;
+import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 
 public class BinCreator {
 
     public static void createBin(String code, String language, Consumer<Tuple<Integer, String>> consumer) throws IOException, URISyntaxException, InterruptedException {
-        HttpClient client = HttpClient.newBuilder()
-                .version(HttpClient.Version.HTTP_1_1)
-                .followRedirects(HttpClient.Redirect.NORMAL)
-                .connectTimeout(Duration.ofSeconds(20))
-                .authenticator(Authenticator.getDefault())
+        PoolingHttpClientConnectionManager cm = new PoolingHttpClientConnectionManager();
+        cm.setMaxTotal(100);
+        CloseableHttpClient client = HttpClients.custom()
+                .setConnectionTimeToLive(20, TimeUnit.SECONDS)
+                .setConnectionManager(cm)
                 .build();
-        HttpRequest request = HttpRequest
-                .newBuilder()
-                .POST(
-                        HttpRequest.BodyPublishers.ofString(
-                                "code=" + URLEncoder.encode(code, StandardCharsets.UTF_8)
-                                        + "&lang=" + URLEncoder.encode(language, StandardCharsets.UTF_8)
-                        )
+        HttpPost httpPost = new HttpPost("https://bin.readthedocs.fr/new");
+        httpPost.setEntity(new UrlEncodedFormEntity(
+                Arrays.asList(
+                        new BasicNameValuePair("code", code),
+                        new BasicNameValuePair("lang", language)
                 )
-                .uri(new URI("https://bin.readthedocs.fr/new"))
-                .header("Accept-Charset", "UTF-8")
-                .header("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8")
-                .build();
-
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        consumer.accept(new Tuple<>(response.statusCode(), response.uri().toString()));
+        ));
+        CloseableHttpResponse response = client.execute(httpPost);
+        System.out.println(Arrays.toString(response.getAllHeaders()));
+        consumer.accept(new Tuple<>(response.getStatusLine().getStatusCode(), response.getLastHeader("Location").getValue()));
     }
 }
