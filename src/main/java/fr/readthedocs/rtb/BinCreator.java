@@ -32,7 +32,6 @@ public class BinCreator {
                 )
         ));
         CloseableHttpResponse response = client.execute(httpPost);
-        System.out.println(Arrays.toString(response.getAllHeaders()));
         consumer.accept(new Tuple<>(response.getStatusLine().getStatusCode(), response.getLastHeader("Location").getValue()));
     }
 }
